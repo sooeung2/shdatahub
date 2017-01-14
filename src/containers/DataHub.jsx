@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/actions.js';
+import { NavBar } from 'components';
 
-export default class DataHub extends Component {
-  constructor() {
-    super();
-  }
+const DataHub = ({title}) => {
+  return (
+    <div className="data-hub">
+      <NavBar />
+      {title}
+    </div>
+  );
+};
 
-  componentDidMount() {
-    console.log('Hello World!');
-  }
+const mapStateToProps = store => ({
+  title: store.hello.title
+});
 
-  render() {
-    return (
-      <div className="data-hub">
-        Shop Heroes Data Hub
-      </div>
-    )
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  helloWorld: () => dispatch(actions.helloWorld())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DataHub);
