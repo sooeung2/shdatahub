@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'components';
 
-const NavBar = ({switchContainer}) => {
+const NavBar = ({active, switchContainer}) => {
   const linkNames = ['home', 'items', 'workers', 'heroes', 'buildings'];
   const navLinks = linkNames.map(name => {
-    return <NavLink key={name} toPath={name} switchContainer={switchContainer} />
+    return <NavLink key={name} toPath={name} active={active} switchContainer={switchContainer} />
   });
   return (
     <nav className="nav-bar">
