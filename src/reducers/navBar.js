@@ -1,8 +1,9 @@
-import { SWITCH_CONTAINER } from '../constants';
+import { SWITCH_CONTAINER, TOGGLE_MENU } from 'constants';
 
 const initialState = {
-  active: 'home'
-}
+  active: 'home',
+  menu: false
+};
 
 const navBar = (state = initialState, action) => {
   switch (action.type) {
@@ -10,9 +11,13 @@ const navBar = (state = initialState, action) => {
       return Object.assign({}, state, {
         active: action.container
       });
+    case TOGGLE_MENU:
+      return Object.assign({}, state, {
+        menu: state.menu ? false : true
+      });
     default:
       return state;
-  }
-}
+  };
+};
 
 export default navBar;

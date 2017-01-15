@@ -15,22 +15,22 @@ $highlight: #3498DB;
   top: 0;
   z-index: 1;
   width: 100%;
-  margin: 0;
-  padding: 0;
 
   background-color: $background;
-  font-family: Lato;
-  font-size: 1em;
   list-style-type: none;
-  text-transform: uppercase;
 
   li {
     a {
       display: inline-block;
-      cursor: pointer;
-      color: $text;
       padding: 1.28em;
+      
+      font-family: Lato;
+      font-size: 1em;
+      color: $text;
+      text-transform: uppercase;
       text-decoration: none;
+      
+      cursor: pointer;
       transition: 0.25s;
     }
 
@@ -42,8 +42,19 @@ $highlight: #3498DB;
       background-color: $highlight;
     }
   }
+
+  li.menu {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  
+  .top-nav {
+    li:not(:first-child) {
+      display: none;
+    }
+    li.menu {
+      display: inline-block;
+    }
+  }
 }

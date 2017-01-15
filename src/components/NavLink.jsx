@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const NavLink = ({toPath, active, switchContainer}) => {
-  const to = toPath === 'home' ? `/` : `/${toPath}`;
-  console.log(toPath, active)
+const NavLink = ({route, active, menu, switchContainer, toggleMenu}) => {
+  if (route === 'menu')
+    return (
+      <li className="menu">
+        <a onClick={() => toggleMenu(menu)}>&#9776;</a>
+      </li>
+    );
+  
+  const to = route === 'home' ? `/` : `/${route}`;
   return (
-    <li>
-      <Link to={to} className={toPath === active ? 'active' : ''} onClick={() => switchContainer(toPath)}>
-        {toPath}
+    <li className={route === active ? 'active' : ''}>
+      <Link to={to} onClick={() => switchContainer(route)}>
+        {route}
       </Link>
     </li>
   );
