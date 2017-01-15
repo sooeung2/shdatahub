@@ -13,7 +13,7 @@ const navBar = (state = initialState, action) => {
       });
     case TOGGLE_MENU:
       return Object.assign({}, state, {
-        menu: state.menu ? false : true
+        menu: action.menu ? false : true
       });
     default:
       return state;
