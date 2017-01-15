@@ -12,7 +12,7 @@ const NavLink = ({route, active, menu, switchContainer, toggleMenu}) => {
   const to = route === 'home' ? `/` : `/${route}`;
   return (
     <li className={route === active ? 'active' : ''}>
-      <Link to={to} onClick={() => switchContainer(route)}>
+      <Link to={to} onClick={() => { switchContainer(route); toggleMenu(true); } }>
         {route}
       </Link>
     </li>

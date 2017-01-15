@@ -6,7 +6,7 @@ $highlight: #3498DB;
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
-  align-items: $align;
+  align-content: $align;
 }
 
 .top-nav {
@@ -34,12 +34,15 @@ $highlight: #3498DB;
       transition: 0.25s;
     }
 
-    a:hover:not(.active) {
+    a:hover {
       color: $highlight;
     }
+  }
 
-    a.active {
-      background-color: $highlight;
+  li.active {
+    background-color: $highlight;
+    a:hover {
+      color: $text;
     }
   }
 
@@ -50,10 +53,18 @@ $highlight: #3498DB;
 
 @media screen and (max-width: 768px) {
   .top-nav {
+    flex-direction: column;
+
     li:not(:first-child) {
       display: none;
     }
     li.menu {
+      display: inline-block;
+    }
+  }
+
+  .top-nav.menu {
+    li {
       display: inline-block;
     }
   }

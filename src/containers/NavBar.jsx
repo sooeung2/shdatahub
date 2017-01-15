@@ -18,7 +18,7 @@ const NavBar = ({active, menu, switchContainer, toggleMenu}) => {
   });
   return (
     <nav className="nav-bar">
-      <ul className="top-nav">
+      <ul className={menu ? "top-nav menu" : "top-nav"}>
         {navLinks}
       </ul>
     </nav>
