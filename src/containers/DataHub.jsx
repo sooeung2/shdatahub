@@ -4,17 +4,17 @@ import * as actions from '../actions/actions.js';
 import { NavBar } from 'containers';
 import { Splash } from 'components';
 
-const DataHub = ({switchContainer, children}) => {
+const DataHub = ({active, switchContainer, children}) => {
   return (
     <div className="data-hub">
-      <NavBar switchContainer={switchContainer} />
+      <NavBar active={active} switchContainer={switchContainer} />
       {children}
     </div>
   );
 };
 
 const mapStateToProps = store => ({
-  
+  active: store.navBar.active
 });
 
 const mapDispatchToProps = dispatch => ({
