@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   resolve: {
-    modulesDirectories: ['src', 'node_modules'],
+    modulesDirectories: ['src', 'resources', 'node_modules'],
     extensions: ['', '.json', '.js', '.jsx']
   },
   stats: { colors: true },

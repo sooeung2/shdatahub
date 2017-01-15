@@ -1,23 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions.js';
-import { NavBar } from 'components';
+import { NavBar } from 'containers';
+import { Splash } from 'components';
 
-const DataHub = ({title}) => {
+const DataHub = ({switchContainer, children}) => {
   return (
     <div className="data-hub">
-      <NavBar />
-      {title}
+      <NavBar switchContainer={switchContainer} />
+      {children}
     </div>
   );
 };
 
 const mapStateToProps = store => ({
-  title: store.hello.title
+  
 });
 
 const mapDispatchToProps = dispatch => ({
-  helloWorld: () => dispatch(actions.helloWorld())
+  switchContainer: container => dispatch(actions.switchContainer(container))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataHub);

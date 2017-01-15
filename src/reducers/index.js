@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import helloReducer from './helloReducer';
+import navBar from './navBar';
 
 const reducers = combineReducers({
-  hello: helloReducer
+  navBar
 });
 
 export default reducers;
