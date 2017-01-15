@@ -1,0 +1,44 @@
+$text: #FFFFFF;
+$background: #1B2227;
+$highlight: #3498DB;
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+
+  background-color: $background;
+  font-family: Lato;
+  font-size: 15px;
+  list-style-type: none;
+  text-transform: uppercase;
+
+  li {
+    a {
+      padding: 21px;
+      cursor: pointer;
+      color: $text;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+
+    a:hover:not(.active) {
+      color: $highlight;
+    }
+
+    a.active {
+      background-color: $highlight;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+}
